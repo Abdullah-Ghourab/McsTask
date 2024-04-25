@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "bootswatch@5.3.3",
+      "destination": "wwwroot/bootswatch/",
+      "files": [
+        "cerulean/bootstrap.min.css",
+        "solar/bootstrap.css",
+        "solar/bootstrap.min.css",
+        "solar/bootstrap.min.css.map",
+        "solar/bootstrap.rtl.css",
+        "solar/bootstrap.rtl.min.css",
+        "solar/bootstrap.rtl.min.css.map"
+      ]
+    }
+  ]
+}

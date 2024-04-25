@@ -1,0 +1,67 @@
+﻿@using McsTask.Core.Enums
+@using McsTask.Models.Entities
+@model Employee
+
+@{
+    ViewData["Title"] = "Edit Employee";
+}
+
+<h1>Edit Employee</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group my-2">
+                <label asp-for="Name" class="control-label my-1"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group my-2">
+                <label asp-for="Address" class="control-label my-1"></label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group my-2">
+                <label asp-for="BirthDate" class="control-label my-1"></label>
+                <input asp-for="BirthDate" class="form-control" />
+                <span asp-validation-for="BirthDate" class="text-danger"></span>
+            </div>
+            <div class="form-group my-2">
+                <label asp-for="Graduation" class="control-label my-1"></label>
+                <input asp-for="Graduation" class="form-control" />
+                <span asp-validation-for="Graduation" class="text-danger"></span>
+            </div>
+            <div class="form-group my-2">
+                <label asp-for="EmploymentType" class="control-label my-1"></label>
+                <select asp-for="EmploymentType" asp-items="Html.GetEnumSelectList<EmploymentType>()" class="form-control"></select>
+                <span asp-validation-for="EmploymentType" class="text-danger"></span>
+            </div>
+            <div class="form-group my-2">
+                <label asp-for="Assurance" class="control-label my-1"></label>
+                <input asp-for="Assurance" class="form-control" />
+                <span asp-validation-for="Assurance" class="text-danger"></span>
+            </div>
+            <div class="form-group my-2">
+                <label asp-for="Salary" class="control-label my-1"></label>
+                <input asp-for="Salary" class="form-control" />
+                <span asp-validation-for="Salary" class="text-danger"></span>
+            </div>
+            <div class="form-group my-2">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="EmployeeList">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
